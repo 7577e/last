@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Cookie&display=swap');
+
+    body {
+      background: linear-gradient(135deg, #000000, #1a0033);
+      color: #f2f2f2;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .welcome-box {
+      background: linear-gradient(145deg, #1a1a1a, #2b2b2b);
+      border: 3px solid #ff00cc;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 0, 255, 0.6);
+      width: 90%;
+      max-width: 800px;
+      animation: boxFadeIn 2s ease;
+    }
+
+    @keyframes boxFadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .title {
+      font-size: 2.5rem;
+      color: #ff00cc;
+      margin-bottom: 30px;
+      text-shadow: 0 0 20px #ff00cc;
+      animation: glowPulse 2s infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      from { text-shadow: 0 0 10px #ff00cc; }
+      to { text-shadow: 0 0 30px #ff00cc, 0 0 50px #ff00cc; }
+    }
+
+    .message {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      color: #00ffff;
+    }
+
+    .open-btn {
+      padding: 18px 50px;
+      font-size: 1.8rem;
+      background: linear-gradient(90deg, #00f2fe, #4facfe);
+      border: none;
+      border-radius: 15px;
+      color: #fff;
+      font-weight: bold;
+      font-family: 'Cookie', cursive;
+      cursor: pointer;
+      box-shadow: 0 0 25px #00f2fe;
+      transition: all 0.5s ease;
+      animation: buttonPulse 2s infinite;
+    }
+
+    .open-btn:hover {
+      background: linear-gradient(90deg, #fc466b, #3f5efb);
+      box-shadow: 0 0 50px #ff00f2, 0 0 60px #3f5efb;
+      transform: scale(1.15) rotate(2deg);
+    }
+
+    @keyframes buttonPulse {
+      0% { box-shadow: 0 0 25px #00f2fe; }
+      50% { box-shadow: 0 0 40px #00f2fe, 0 0 50px #4facfe; }
+      100% { box-shadow: 0 0 25px #00f2fe; }
+    }
+
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1s ease, visibility 1s;
+    }
+
+    .loading-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .loading-text {
+      font-size: 2.5rem;
+      color: #ff00cc;
+      text-shadow: 0 0 20px #ff00cc;
+      animation: loadingGlow 1.5s infinite alternate;
+    }
+
+    @keyframes loadingGlow {
+      from { opacity: 0.7; }
+      to { opacity: 1; }
+    }
+
+    .spinner {
+      width: 80px;
+      height: 80px;
+      border: 8px solid #00ffff;
+      border-top: 8px solid #ff00cc;
+      border-radius: 50%;
+      animation: spin 1.5s linear infinite;
+      margin-bottom: 30px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-box">
+    <div class="title">Dear Sir Ji</div>
+    <div class="message">
+     For the best experience:
+
+Open this on a PC or laptop (or use desktop mode if on mobile).
+
+ <p></p> Check your internet speed to ensure everything loads correctly.
+
+<p></p>After opening, refresh the page once.
+    </div>
+    <button class="open-btn" onclick="openMain()">OPEN</button>
+  </div>
+
+  <!-- Loading Overlay with Full Animation -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="spinner"></div>
+    <div class="loading-text">Opening...</div>
+  </div>
+
+  <script>
+    function openMain() {
+      // Show loading animation
+      document.getElementById('loadingOverlay').classList.add('active');
+
+      // Fast redirect after short animation (1.5 seconds for cool effect)
+      setTimeout(() => {
+        window.location.href = 'https://75raj.github.io/757/';
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
