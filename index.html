@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Cookie&display=swap');
-
     body {
-      background: linear-gradient(135deg, #000000, #1a0033);
-      color: #f2f2f2;
-      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      font-family: sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -21,154 +19,100 @@
       box-sizing: border-box;
       text-align: center;
     }
-
     .welcome-box {
-      background: linear-gradient(145deg, #1a1a1a, #2b2b2b);
-      border: 3px solid #ff00cc;
+      background: #222;
       padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 0 30px rgba(255, 0, 255, 0.6);
-      width: 90%;
+      border-radius: 15px;
       max-width: 800px;
-      animation: boxFadeIn 2s ease;
+      width: 90%;
     }
-
-    @keyframes boxFadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    .title {
+    h1 {
       font-size: 2.5rem;
-      color: #ff00cc;
       margin-bottom: 30px;
-      text-shadow: 0 0 20px #ff00cc;
-      animation: glowPulse 2s infinite alternate;
     }
-
-    @keyframes glowPulse {
-      from { text-shadow: 0 0 10px #ff00cc; }
-      to { text-shadow: 0 0 30px #ff00cc, 0 0 50px #ff00cc; }
-    }
-
     .message {
       font-size: 1.3rem;
       line-height: 1.8;
       margin-bottom: 40px;
-      color: #00ffff;
     }
-
-    .open-btn {
-      padding: 18px 50px;
-      font-size: 1.8rem;
-      background: linear-gradient(90deg, #00f2fe, #4facfe);
-      border: none;
-      border-radius: 15px;
+    button {
+      padding: 15px 40px;
+      margin: 10px;
+      font-size: 1.2rem;
+      background: #333;
       color: #fff;
-      font-weight: bold;
-      font-family: 'Cookie', cursive;
+      border: 2px solid #555;
+      border-radius: 10px;
       cursor: pointer;
-      box-shadow: 0 0 25px #00f2fe;
-      transition: all 0.5s ease;
-      animation: buttonPulse 2s infinite;
+      transition: all 0.3s;
     }
-
-    .open-btn:hover {
-      background: linear-gradient(90deg, #fc466b, #3f5efb);
-      box-shadow: 0 0 50px #ff00f2, 0 0 60px #3f5efb;
-      transform: scale(1.15) rotate(2deg);
+    button:hover {
+      background: #444;
+      border-color: #777;
+      transform: scale(1.05);
     }
-
-    @keyframes buttonPulse {
-      0% { box-shadow: 0 0 25px #00f2fe; }
-      50% { box-shadow: 0 0 40px #00f2fe, 0 0 50px #4facfe; }
-      100% { box-shadow: 0 0 25px #00f2fe; }
-    }
-
     .loading-overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      z-index: 1000;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 1s ease, visibility 1s;
+      transition: opacity 0.5s, visibility 0.5s;
     }
-
     .loading-overlay.active {
       opacity: 1;
       visibility: visible;
     }
-
     .loading-text {
-      font-size: 2.5rem;
-      color: #ff00cc;
-      text-shadow: 0 0 20px #ff00cc;
-      animation: loadingGlow 1.5s infinite alternate;
-    }
-
-    @keyframes loadingGlow {
-      from { opacity: 0.7; }
-      to { opacity: 1; }
-    }
-
-    .spinner {
-      width: 80px;
-      height: 80px;
-      border: 8px solid #00ffff;
-      border-top: 8px solid #ff00cc;
-      border-radius: 50%;
-      animation: spin 1.5s linear infinite;
-      margin-bottom: 30px;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      font-size: 2rem;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <div class="welcome-box">
-    <div class="title">Dear Sir Ji</div>
+    <h1>sorry for today </h1>
     <div class="message">
-     For the best experience:
-
-Open this on a PC or laptop (or use desktop mode if on mobile).
-
- <p></p> Check your internet speed to ensure everything loads correctly.
-
-<p></p>After opening, refresh the page once.
-
-<p>aabbhi aap nahi dekhana plz this  is not for you i will meantion  at night  today 7 </p>
+      I’m not ready for that. If you say yes, I understand your time is important.<br><br>
+      So, instead of sending a text, I will use AI to make a voice message — this will save your time too.<br><br>
+      You can check it at these times:<br>
+      <strong>Tomorrow (21-12-2025):</strong><br>
+      Morning – 5:00 AM<br>
+      Afternoon – 3:45 PM<br>
+      Evening – 6:00 PM<br><br>
+      If not, please check at the same times on these dates:<br>
+      22-12-2025, 23-12-2025, and 24-12-2025.<br><br>
+      You can also click at the bottom to see the message I wrote on 17-12-2025.
     </div>
-    <button class="open-btn" onclick="openMain()">OPEN</button>
+    <button onclick="openMain()">OPEN VOICE MESSAGE</button>
+    <button onclick="openLast()">SEE WRITTEN MESSAGE</button>
   </div>
 
-  <!-- Loading Overlay with Full Animation -->
   <div id="loadingOverlay" class="loading-overlay">
-    <div class="spinner"></div>
-    <div class="loading-text">Opening...</div>
+    <div class="loading-text">Loading...</div>
   </div>
 
   <script>
     function openMain() {
-      // Show loading animation
       document.getElementById('loadingOverlay').classList.add('active');
-
-      // Fast redirect after short animation (1.5 seconds for cool effect)
+      document.querySelector('.loading-text').textContent = 'Opening Voice Message...';
       setTimeout(() => {
         window.location.href = 'https://75raj.github.io/757/';
       }, 1500);
     }
+
+    function openLast() {
+      document.getElementById('loadingOverlay').classList.add('active');
+      document.querySelector('.loading-text').textContent = 'Opening Written Message...';
+      setTimeout(() => {
+        window.location.href = 'https://75rishi.github.io/7/';
+      }, 1500);
+    }
   </script>
 </body>
-
 </html>
